@@ -2,6 +2,8 @@
 #include "printer.hpp"
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include <string>
 
 namespace Printer {
 
@@ -9,10 +11,11 @@ namespace Printer {
         const std::string& label,
         const std::vector<std::vector<Pose>>& poses
     ) {
-        std::cout << label << "[";
+        std::ofstream out_file("outfile.txt", std::ios::app);
+        out_file << label << "[";
         for (size_t i = 0; i < poses.size(); ++i) {
             for (size_t j = 0; j < poses[i].size(); ++j) {
-                std::cout 
+                out_file
                     << "("
                     << std::fixed << std::setprecision(6)
                     << poses[i][j].x << "," 
@@ -20,11 +23,12 @@ namespace Printer {
                     << ")";
                 // print comma if this isn't the very last element
                 if (i != poses.size() - 1 || j != poses[i].size() - 1) {
-                    std::cout << ",";
+                    out_file << ",";
                 }
             }
         }
-        std::cout << "]\n";
+        out_file << "]\n";
+        out_file.close();
     }
 
     void printVelocityVector(
@@ -32,13 +36,14 @@ namespace Printer {
         const std::vector<std::vector<VelocityLayout>>& vels,
         const std::string& whichField
     ) {
-        std::cout << label << "[";
+        std::ofstream out_file("outfile.txt", std::ios::app);
+        out_file << label << "[";
         for (size_t i = 0; i < vels.size(); ++i) {
             for (size_t j = 0; j < vels[i].size(); ++j) {
                 float value = (whichField == "linear") 
                                 ? vels[i][j].linear 
                                 : vels[i][j].angular;
-                std::cout 
+                out_file
                     << "("
                     << std::fixed << std::setprecision(6)
                     << vels[i][j].time << "," 
@@ -46,10 +51,11 @@ namespace Printer {
                     << ")";
                 // same “not last element” test
                 if (i != vels.size() - 1 || j != vels[i].size() - 1) {
-                    std::cout << ",";
+                    out_file << ",";
                 }
             }
         }
-        std::cout << "]\n";
+        out_file << "]\n";
+        out_file.close();
     }
 }

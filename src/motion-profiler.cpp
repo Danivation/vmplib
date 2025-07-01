@@ -8,10 +8,11 @@
 #include <string>
 
 // ----------------------------------------------------------------------------
+constexpr float in_to_m = 0.0254;
 // Constants (same values as your original printVels() used)
-constexpr float MAX_VELOCITY = 2.12f;    // m/s
-constexpr float MAX_ACCEL = 7.778f;      // m/s²
-constexpr float TRACK_WIDTH = 0.288925f; // meters
+constexpr float MAX_VELOCITY = 1.94503855165f;          // m/s
+constexpr float MAX_ACCEL = 3.5f;                       // m/s² (estimated, it should be more like 4.2 but whatever)
+constexpr float TRACK_WIDTH = 11.75 * in_to_m;          // meters
 constexpr float RAMSETE_B = 2.0f;
 constexpr float RAMSETE_ZETA = 0.7f;
 constexpr float DT = 0.01f; // 10 ms timestep
@@ -100,7 +101,7 @@ void printVels(
     Printer::printVelocityVector("L = ", Velocities, "linear");
     Printer::printVelocityVector("A = ", Velocities, "angular");
     // 8) Print the closed-loop (“RAMSETE‐executed”) path:
-    Printer::printPoseVector("X_r = ", RamsetePoses);
-    Printer::printVelocityVector("L_r = ", RamseteVelocities, "linear");
-    Printer::printVelocityVector("A_r = ", RamseteVelocities, "angular");
+    //Printer::printPoseVector("X_r = ", RamsetePoses);
+    //Printer::printVelocityVector("L_r = ", RamseteVelocities, "linear");
+    //Printer::printVelocityVector("A_r = ", RamseteVelocities, "angular");
 }
