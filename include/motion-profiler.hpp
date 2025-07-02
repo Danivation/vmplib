@@ -4,6 +4,15 @@
 #include <vector>
 #include "types.hpp"
 
+extern const float MAX_VELOCITY;
+extern const float MAX_ACCEL;
+extern const float TRACK_WIDTH;
+extern const float RAMSETE_B;
+extern const float RAMSETE_ZETA;
+extern const float DT;
+
+extern const float in_to_m;
+
 // Forward‐declare the conversion routine you already have in your code:
 //   It takes a spline’s control points and a list of (x,y,velocity) keyframes,
 //   and returns a vector of (time, scalar-velocity) keyframes.

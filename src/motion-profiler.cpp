@@ -8,14 +8,14 @@
 #include <string>
 
 // ----------------------------------------------------------------------------
-constexpr float in_to_m = 0.0254;
+const float in_to_m = 0.0254;
 // Constants (same values as your original printVels() used)
-constexpr float MAX_VELOCITY = 1.94503855165f;          // m/s
-constexpr float MAX_ACCEL = 4.2f;                       // m/s² (estimated, it should be more like 4.2 but whatever)
-constexpr float TRACK_WIDTH = 11.75 * in_to_m;          // meters
-constexpr float RAMSETE_B = 2.0f;
-constexpr float RAMSETE_ZETA = 0.7f;
-constexpr float DT = 0.01f; // 10 ms timestep
+const float MAX_VELOCITY = 1.94503855165f;          // m/s
+const float MAX_ACCEL = 4.0f;                       // m/s² (estimated, it should be more like 4.2 but whatever)
+const float TRACK_WIDTH = 11.75 * in_to_m;          // meters
+const float RAMSETE_B = 2.0f;
+const float RAMSETE_ZETA = 0.7f;
+const float DT = 0.01f; // 10 ms timestep
 
 using namespace MotionUtils; // for sFunction, curvature, findXandY, findTForS, wrapAngle, sinc
 
