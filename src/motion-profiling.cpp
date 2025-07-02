@@ -50,8 +50,8 @@ const std::vector<VelocityLayout>& TrapezoidalProfile::getVelocities() const {
 
 float TrapezoidalProfile::computeCurvatureVelocityLimit(float t) const {
     const float trackWidth = 0.288925f;
-    float curv = curvature(control_, t);
-    if (std::abs(curv) < 1e-6f) {
+    float curv = fabs(curvature(control_, t));
+    if (std::fabs(curv) < 1e-6f) {
         return max_lin_vel_;
     }
     float turn_radius = 1.0f / curv;
