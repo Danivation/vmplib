@@ -27,7 +27,7 @@ RamseteFollower::RamseteFollower(const std::vector<Pose>& refPoses,
     executed_poses_.reserve(1000);
     executed_vels_.reserve(1000);
     current_pose_ = refPoses.front();
-    std::cout << refVels.front().linear << std::endl;
+    //std::cout << refVels.front().linear << std::endl;
     if (reverse_) {
         current_pose_.theta = wrapAngle(current_pose_.theta + static_cast<float>(M_PI));
     }

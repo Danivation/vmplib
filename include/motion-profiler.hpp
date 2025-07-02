@@ -27,7 +27,7 @@ convertToTFrame(
 //
 // Example usage remains unchanged:
 //   printVels(controlPoints, keyFrameVelocityList, false);
-void printVels(
+std::vector<std::vector<VelocityLayout>> printVels(
     const std::vector<std::vector<Point>>& controlPoints,
     const std::vector<std::vector<KeyframeVelocitiesXandY>>& keyFrameVelocityInitList,
     bool useKeyFrames
