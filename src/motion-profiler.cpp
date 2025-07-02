@@ -76,6 +76,7 @@ std::vector<std::vector<VelocityLayout>> printVels(
         Poses.push_back(profiler.getPoses());
         Velocities.push_back(profiler.getVelocities());
 
+        /**
         // 7) Build & run the RAMSETE follower
         RamseteFollower ramser(
             profiler.getPoses(),
@@ -94,6 +95,7 @@ std::vector<std::vector<VelocityLayout>> printVels(
 
         RamsetePoses.push_back(ramser.getExecutedPoses());
         RamseteVelocities.push_back(ramser.getExecutedVelocities());
+        /**/
         timeAccum = profiler.getVelocities()[profiler.getVelocities().size() - 1].time;
     }
     // 6) Print the open-loop (“nominal”) path:
