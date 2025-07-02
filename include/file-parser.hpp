@@ -11,7 +11,7 @@
 void loadPaths(
     const std::string& filename,
     std::vector<std::vector<Point>>& controlPoints,
-    std::vector<std::vector<KeyframeVelocitiesXandY>>& keyFrameVelocityList
+    std::vector<std::vector<KeyframeVelocitiesXandY>>& keyFrameVelocityList = {}
 );
 
 #endif // FILE_PARSER_HPP

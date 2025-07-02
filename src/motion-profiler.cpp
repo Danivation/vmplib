@@ -66,7 +66,8 @@ std::vector<std::vector<VelocityLayout>> printVels(
             exitVel,
             keyframes,
             useKeyFrames,
-            DT);
+            DT
+        );
 
         profiler.start();
         while (!profiler.isFinished())

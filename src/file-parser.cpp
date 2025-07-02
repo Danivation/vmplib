@@ -5,7 +5,7 @@
 void loadPaths(
     const std::string& filename,
     std::vector<std::vector<Point>>& controlPoints,
-    std::vector<std::vector<KeyframeVelocitiesXandY>>& keyFrameVelocityList
+    std::vector<std::vector<KeyframeVelocitiesXandY>>& keyFrameVelocityList = {}
 ) {
     std::ifstream infile(filename);
     if (!infile) {
