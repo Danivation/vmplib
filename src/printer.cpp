@@ -1,5 +1,6 @@
 // printer.cpp
 #include "printer.hpp"
+#include <stdexcept>
 #include <fstream>
 #include <iomanip>
 #include <fstream>
@@ -14,7 +15,7 @@ namespace Printer {
         const std::vector<std::vector<Pose>>& poses
     ) {
         if (!outFile) {
-            throw std::runtime_error("Failed to open output.txt");
+            //throw std::runtime_error("Failed to open output.txt");
         }
         outFile << label << "[";
         for (size_t i = 0; i < poses.size(); ++i) {
@@ -39,7 +40,7 @@ namespace Printer {
         const std::string& whichField
     ) {
         if (!outFile) {
-            throw std::runtime_error("Failed to open output.txt");
+            //throw std::runtime_error("Failed to open output.txt");
         }
         outFile << label << "[";
         for (size_t i = 0; i < vels.size(); ++i) {

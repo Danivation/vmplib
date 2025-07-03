@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char* argv[]) {    
+int main2(int argc, char* argv[]) {    
 	std::vector<std::vector<Point>> controlPoints;
 	std::vector<std::vector<KeyframeVelocitiesXandY>> keyFrameVelocityList;
 	std::string filename;
