@@ -1,6 +1,5 @@
 #include "motion-profiling.hpp"
 #include <algorithm>
-#include <iostream>
 #include <cmath>
 
 using namespace MotionUtils;
@@ -50,8 +49,8 @@ const std::vector<VelocityLayout>& TrapezoidalProfile::getVelocities() const {
 
 float TrapezoidalProfile::computeCurvatureVelocityLimit(float t) const {
     const float trackWidth = 0.288925f;
-    float curv = fabs(curvature(control_, t));
-    if (std::fabs(curv) < 1e-6f) {
+    float curv = unsignedCurvature(control_, t);
+    if (std::abs(curv) < 1e-6f) {
         return max_lin_vel_;
     }
     float turn_radius = 1.0f / curv;
@@ -132,7 +131,7 @@ void TrapezoidalProfile::step() {
     float deltaS = desired_linear * dt_;
     float next_t = findNextT(s_current_, deltaS);
 
-    float kappa = curvature(control_, next_t);
+    float kappa = signedCurvature(control_, next_t);
     float turning_component = kappa * desired_linear;
 
     Pose newPose = findXandY(control_, next_t);
