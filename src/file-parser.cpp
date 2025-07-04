@@ -18,7 +18,7 @@ void loadPaths(
 ) {
     std::ifstream infile(filename);
     if (!infile) {
-        std::cerr << "Error: could not open " << filename << "\n";
+        std::cout << "Error: could not open " << filename << "\n";
         return;
     }
 
