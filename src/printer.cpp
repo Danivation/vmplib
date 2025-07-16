@@ -36,7 +36,7 @@ namespace Printer {
 
     void printVelocityVector(
         const std::string& label,
-        const std::vector<std::vector<VelocityLayout>>& vels,
+        const std::vector<std::vector<VelocityPoseLayout>>& vels,
         const std::string& whichField
     ) {
         std::ofstream out_file("outfile.txt", std::ios::app);

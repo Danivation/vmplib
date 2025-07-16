@@ -28,7 +28,7 @@ public:
 
     // Access generated path poses & velocities
     const std::vector<Pose>& getPoses() const;
-    const std::vector<VelocityLayout>& getVelocities() const;
+    const std::vector<VelocityPoseLayout>& getVelocities() const;
     
 
 private:
@@ -52,7 +52,7 @@ private:
 
     // Accumulated output
     std::vector<Pose> poses_;
-    std::vector<VelocityLayout> velocities_;
+    std::vector<VelocityPoseLayout> velocities_;
 
     // Helper methods
     float computeCurvatureVelocityLimit(float t) const;

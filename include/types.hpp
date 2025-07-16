@@ -15,6 +15,11 @@ struct VelocityLayout {
     float linear, angular, time;
 };
 
+struct VelocityPoseLayout {
+    float linear, angular, time;
+    Pose pose;
+};
+
 struct KeyframeVelocities {
     float velocity, time;
 };

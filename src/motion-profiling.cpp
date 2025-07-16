@@ -43,7 +43,7 @@ const std::vector<Pose>& TrapezoidalProfile::getPoses() const {
     return poses_;
 }
 
-const std::vector<VelocityLayout>& TrapezoidalProfile::getVelocities() const {
+const std::vector<VelocityPoseLayout>& TrapezoidalProfile::getVelocities() const {
     return velocities_;
 }
 
@@ -110,7 +110,7 @@ float TrapezoidalProfile::findNextT(float s0, float deltaS) const {
 void TrapezoidalProfile::start() {
     Pose newPose = findXandY(control_, 0.0f);
     poses_.push_back(newPose);
-    VelocityLayout vlay{ 0.0f, 0.0f, time_accum_ };
+    VelocityPoseLayout vlay{ 0.0f, 0.0f, time_accum_, newPose};
     velocities_.push_back(vlay);
 }
 
@@ -137,7 +137,7 @@ void TrapezoidalProfile::step() {
     Pose newPose = findXandY(control_, next_t);
     poses_.push_back(newPose);
 
-    VelocityLayout vlay{ desired_linear, turning_component, time_accum_ };
+    VelocityPoseLayout vlay{ desired_linear, turning_component, time_accum_, newPose};
     velocities_.push_back(vlay);
 
     prev_t_    = next_t;

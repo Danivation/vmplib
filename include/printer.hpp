@@ -12,6 +12,6 @@ namespace Printer {
 
     // Prints either “linear” or “angular” component as: label [ (t1, value1), (t2, value2), … ]\n
     void printVelocityVector(const std::string& label,
-                             const std::vector<std::vector<VelocityLayout>>& vels,
+                             const std::vector<std::vector<VelocityPoseLayout>>& vels,
                              const std::string& whichField);
 }

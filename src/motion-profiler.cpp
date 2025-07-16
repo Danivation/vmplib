@@ -19,14 +19,14 @@ const float DT = 0.01f; // 10 ms timestep
 
 using namespace MotionUtils; // for sFunction, curvature, findXandY, findTForS, wrapAngle, sinc
 
-std::vector<std::vector<VelocityLayout>> printVels(
+std::vector<std::vector<VelocityPoseLayout>> printVels(
     const std::vector<std::vector<Point>> &controlPoints,
     const std::vector<std::vector<KeyframeVelocitiesXandY>> &keyFrameVelocityInitList,
     bool useKeyFrames)
 {
     float timeAccum = 0.0f;
     std::vector<std::vector<Pose>> Poses;
-    std::vector<std::vector<VelocityLayout>> Velocities;
+    std::vector<std::vector<VelocityPoseLayout>> Velocities;
     std::vector<std::vector<Pose>> RamsetePoses;
     std::vector<std::vector<VelocityLayout>> RamseteVelocities;
     for (size_t i = 0; i < controlPoints.size(); ++i)
