@@ -97,7 +97,7 @@ std::vector<std::vector<VelocityPoseLayout>> printVels(
         RamsetePoses.push_back(ramser.getExecutedPoses());
         RamseteVelocities.push_back(ramser.getExecutedVelocities());
         /**/
-        timeAccum = profiler.getVelocities()[profiler.getVelocities().size() - 1].time;
+        timeAccum = profiler.getVelocities()[profiler.getVelocities().size() - 1].velocity.time;
     }
     // 6) Print the open-loop (“nominal”) path:
     Printer::printPoseVector("X = ", Poses);

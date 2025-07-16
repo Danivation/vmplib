@@ -16,7 +16,7 @@ struct VelocityLayout {
 };
 
 struct VelocityPoseLayout {
-    float linear, angular, time;
+    VelocityLayout velocity;
     Pose pose;
 };
 

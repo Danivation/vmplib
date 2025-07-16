@@ -47,12 +47,12 @@ namespace Printer {
         for (size_t i = 0; i < vels.size(); ++i) {
             for (size_t j = 0; j < vels[i].size(); ++j) {
                 float value = (whichField == "linear") 
-                                ? vels[i][j].linear 
-                                : vels[i][j].angular;
+                                ? vels[i][j].velocity.linear 
+                                : vels[i][j].velocity.angular;
                 out_file
                     << "("
                     << std::fixed << std::setprecision(6)
-                    << vels[i][j].time << "," 
+                    << vels[i][j].velocity.time << "," 
                     << value 
                     << ")";
                 // same “not last element” test
