@@ -77,35 +77,11 @@ std::vector<std::vector<VelocityPoseLayout>> printVels(
         Poses.push_back(profiler.getPoses());
         Velocities.push_back(profiler.getVelocities());
 
-        /**
-        // 7) Build & run the RAMSETE follower
-        RamseteFollower ramser(
-            profiler.getPoses(),
-            profiler.getVelocities(),
-            TRACK_WIDTH,
-            RAMSETE_B,
-            RAMSETE_ZETA,
-            timeAccum,
-            DT,
-            false);
-
-        while (!ramser.isFinished())
-        {
-            ramser.step();
-        }
-
-        RamsetePoses.push_back(ramser.getExecutedPoses());
-        RamseteVelocities.push_back(ramser.getExecutedVelocities());
-        /**/
         timeAccum = profiler.getVelocities()[profiler.getVelocities().size() - 1].velocity.time;
     }
     // 6) Print the open-loop (“nominal”) path:
     Printer::printPoseVector("X = ", Poses);
-    //Printer::printVelocityVector("L = ", Velocities, "linear");
-    //Printer::printVelocityVector("A = ", Velocities, "angular");
-    // 8) Print the closed-loop (“RAMSETE‐executed”) path:
-    //Printer::printPoseVector("X_r = ", RamsetePoses);
-    //Printer::printVelocityVector("L_r = ", RamseteVelocities, "linear");
-    //Printer::printVelocityVector("A_r = ", RamseteVelocities, "angular");
+    Printer::printVelocityVector("L = ", Velocities, "linear");
+    Printer::printVelocityVector("A = ", Velocities, "angular");
     return Velocities;
 }
