@@ -101,8 +101,8 @@ std::vector<std::vector<VelocityPoseLayout>> printVels(
     }
     // 6) Print the open-loop (“nominal”) path:
     Printer::printPoseVector("X = ", Poses);
-    Printer::printVelocityVector("L = ", Velocities, "linear");
-    Printer::printVelocityVector("A = ", Velocities, "angular");
+    //Printer::printVelocityVector("L = ", Velocities, "linear");
+    //Printer::printVelocityVector("A = ", Velocities, "angular");
     // 8) Print the closed-loop (“RAMSETE‐executed”) path:
     //Printer::printPoseVector("X_r = ", RamsetePoses);
     //Printer::printVelocityVector("L_r = ", RamseteVelocities, "linear");
